@@ -8,4 +8,24 @@ $(function() {
   // Assign a mouseenter event to the <rect> element that makes it have an opacity of .5
   // Assign a mouseleave event to the <rect> element that makes it have an opacity of 1
 
+	$('p').on('click', function() {
+		$(this).remove();
+	});
+	
+	$('circle').on('click', function() {
+		$(this).css('fill', 'red');
+		if ($(this).attr('r') == 40) {
+			$(this).attr('r', '10');
+		} else {
+			$(this).attr('r', '40');
+		}
+	});
+	
+	$('rect').mouseenter(function() {
+		$(this).css('opacity', '.5');
+	});
+	
+	$('rect').mouseleave(function() {
+		$(this).css('opacity', '1');
+	});
 });
